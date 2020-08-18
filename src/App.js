@@ -16,7 +16,12 @@ class App extends Component {
 		const ideas = this.state.ideas
 		ideas.push(newIdea)
 		// set state with the new ideas array (will trigger a re-render)
-		this.setState({ ideas: ideas})
+		this.setState({ideas: ideas})
+	}
+
+	deleteIdea = (id) => {
+		const filteredIdeas = this.state.ideas.filter(idea => idea.id !== id)
+		this.setState({ideas: filteredIdeas})
 	}
 
 	render() {
@@ -24,7 +29,7 @@ class App extends Component {
 			<main className="App">
 				<h1>Idea Box</h1>
 				<Form addNewIdea={this.addNewIdea} />
-				<Ideas ideas={this.state.ideas} />
+				<Ideas ideas={this.state.ideas} deleteIdea={this.deleteIdea}/>
 			</main>
 		)
 	}

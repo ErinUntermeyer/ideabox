@@ -2,15 +2,15 @@ import React from "react"
 import "./Ideas.css"
 import Card from "./Card"
 
-const Ideas = ( {ideas} ) => {
+const Ideas = (props) => {
 
-	const ideaCards = ideas.map(idea => {
+	const ideaCards = props.ideas.map(idea => {
 		return (
 			<Card
 				id={idea.id}
 				title={idea.title}
 				description={idea.description}
-				key={idea.id}
+				key={props.ideas.indexOf(idea)}
 			/>
 		)
 	})

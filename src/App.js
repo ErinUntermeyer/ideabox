@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Ideas from "./Ideas"
+import Form from "./Form"
 import "./App.css"
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
 		return (
 			<main className="App">
 				<h1>Idea Box</h1>
+				<Form />
 				<Ideas ideas={this.state.ideas}/>
 			</main>
 		)

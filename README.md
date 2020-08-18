@@ -21,3 +21,11 @@ Which component will need to be alerted when that action occurs?
 State should be in App because every component it holds (Form and Ideas) needs to have access to the data
 
 General rule of thumb: If a component needs to keep track of and display data, and if that component itself will update or change the data its displaying, we need to use a class-based component.
+
+  a. What is a controlled component in react?
+	- In a controlled component, the form data is handled by the state within the component. The state within the component serves as “the single source of truth” for the input elements that are rendered by the component.
+  b. What two requirements are needed to make an element a controlled element?
+	- A value attribute on the input
+	- An event listener that will set the state (onChange)
+  c. What is a an uncontrolled element?
+	- Traditional HTML elements

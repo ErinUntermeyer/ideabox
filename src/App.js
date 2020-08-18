@@ -15,12 +15,20 @@ class App extends Component {
 		}
 	}
 
+	addNewIdea = (newIdea) => {
+		// add the new idea into existing ideas array in state
+		const ideas = this.state.ideas
+		ideas.push(newIdea)
+		// set state with the new ideas array (will trigger a re-render)
+		this.setState({ ideas: ideas})
+	}
+
 	render() {
 		return (
 			<main className="App">
 				<h1>Idea Box</h1>
-				<Form />
-				<Ideas ideas={this.state.ideas}/>
+				<Form addNewIdea={this.addNewIdea} />
+				<Ideas ideas={this.state.ideas} />
 			</main>
 		)
 	}
